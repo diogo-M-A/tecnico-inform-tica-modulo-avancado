@@ -1,0 +1,16 @@
+{
+  "name": "atv1",
+  "version": "1.0.0",
+  "description": "atividade de backend da semana 4",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Diogo M Araújo",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "express": "^4.18.2",
+    "uuid": "^9.0.0"
+  }
+}

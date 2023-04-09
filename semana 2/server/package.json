@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "atividade da segunda semana, backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Diogo Melo de Araújo, 20223007304",
+  "license": "ISC"
+}

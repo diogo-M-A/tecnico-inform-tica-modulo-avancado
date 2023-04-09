@@ -1,0 +1,3 @@
+Antes do Node.js, o Javascript era uma linguagem utilizada apenas para manipular páginas nos navegadores web. Como o Node.js, foi possível aproveitar essa mesma linguagem para criar código de backend. Com isso, milhares de programadores de frontend que já estão habituados com a linguagem Javascript podem aproveitar esse conhecimento para criar todo o sistema. Essa é a grande inovação do Node.js.
+
+Como dito, o Node.js não é uma linguagem de programação e sim uma tecnologia que utiliza o motor de execução Javascript do Google Chrome (V8) para execução de código Javascript fora do navegador. O motor de execução Javascript do Google Chrome é bastante eﬁciente e rápido, trazendo todo esse benefício à tecnologia.
