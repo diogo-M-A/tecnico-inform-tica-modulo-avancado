@@ -1,0 +1,72 @@
+Exercício 1
+Para que serve a cláusula ORDER BY? Crie uma consulta de exemplo que use essa
+cláusula em uma tabela qualquer.
+
+A cláusula ORDER BY é usada em consultas SQL para classificar os resultados de uma consulta em uma ordem específica. É frequentemente usado em conjunto com a cláusula SELECT para recuperar os resultados da consulta em uma ordem específica com base em uma ou mais colunas da tabela.
+
+Por exemplo, suponha que temos uma tabela "clientes" com as colunas "id", "nome" e "saldo". Podemos usar a cláusula ORDER BY para classificar a tabela em ordem crescente ou decrescente com base no saldo dos clientes da seguinte maneira:
+
+SELECT id, nome, saldo
+FROM clientes
+ORDER BY saldo DESC;
+
+Neste exemplo, estamos selecionando as colunas "id", "nome" e "saldo" da tabela "clientes" e estamos classificando os resultados em ordem decrescente com base na coluna "saldo". Isso significa que os resultados serão exibidos em ordem decrescente de saldo, começando pelo cliente com o maior saldo.
+
+Exercício 2
+Considerando uma tabela chamada “produtos” com os atributos “id”, “nome”, “categoria” e
+“preco”, elabore uma consulta que exibe uma lista das categorias distintas registradas nos
+produtos e o valor médio dos produtos de cada uma dessas categorias. O resultado dessa
+consulta deve ter duas colunas, uma com o nome da categoria e outra com o valor médio
+de seus produto
+
+Para exibir uma lista das categorias distintas registradas na tabela "produtos" e o valor médio dos produtos de cada uma dessas categorias, podemos usar a cláusula GROUP BY para agrupar os produtos por categoria e a função AVG para calcular o valor médio dos produtos em cada categoria. A consulta ficaria assim:
+
+SELECT categoria, AVG(preco) as valor_medio
+FROM produtos
+GROUP BY categoria;
+
+Nessa consulta, estamos selecionando a coluna "categoria" da tabela "produtos" e a média dos valores da coluna "preco", renomeando essa média como "valor_medio". Em seguida, usamos a cláusula GROUP BY para agrupar os produtos por categoria. O resultado será uma lista das categorias distintas registradas na tabela "produtos" e o valor médio dos produtos de cada uma dessas categorias.
+
+
+Exercício 1
+Crie um comando para inserir a coluna data_nascimento em uma tabela chamada
+“funcionarios”. O tipo dessa coluna deve permitir adicionar uma data válida
+
+Para adicionar uma nova coluna chamada "data_nascimento" na tabela "funcionarios" com um tipo de dados que permita adicionar uma data válida, podemos usar o seguinte comando SQL:
+
+ALTER TABLE funcionarios
+ADD data_nascimento DATE;
+
+Nesse comando, estamos usando a cláusula ALTER TABLE para adicionar uma nova coluna chamada "data_nascimento" na tabela "funcionarios". O tipo de dados especificado é DATE, que permite adicionar uma data válida. Depois de executar este comando, a nova coluna será adicionada à tabela "funcionarios" e estará pronta para armazenar datas de nascimento de funcionários.
+
+Exercício 2
+O comando ALTER TABLE pode ser utilizado com o CHANGE COLUMN e com o MODIFY
+COLUMN. Qual a funcionalidade de cada um deles?
+
+O comando ALTER TABLE é usado para alterar a estrutura de uma tabela existente em um banco de dados. Entre os subcomandos disponíveis do ALTER TABLE, temos o CHANGE COLUMN e o MODIFY COLUMN, que têm as seguintes funcionalidades:
+
+CHANGE COLUMN: usado para alterar o nome e o tipo de dados de uma coluna existente em uma tabela. 
+
+MODIFY COLUMN: usado para alterar o tipo de dados de uma coluna existente em uma tabela.
+
+O CHANGE COLUMN é usado para alterar o nome e o tipo de dados de uma coluna existente, enquanto o MODIFY COLUMN é usado apenas para alterar o tipo de dados de uma coluna existente.
+
+Exercício 3
+Crie os comandos necessários para criar duas tabelas e uma relação entre elas
+
+CREATE TABLE clientes (
+    id INT PRIMARY KEY,
+    nome VARCHAR(50),
+    email VARCHAR(100)
+);
+
+CREATE TABLE pedidos (
+    id INT PRIMARY KEY,
+    data_pedido DATE,
+    valor_total DECIMAL(10,2),
+    id_cliente INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+
+
+

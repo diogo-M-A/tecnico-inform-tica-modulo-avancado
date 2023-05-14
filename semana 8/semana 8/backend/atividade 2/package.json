@@ -1,0 +1,16 @@
+{
+  "name": "atividade-2",
+  "version": "1.0.0",
+  "description": "programa em Node.js que gera e valida tokens JWT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Diogo M. Araújo",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+Exercício 1
+Qual o comando SQL utilizado para se criar um novo usuário ja informando a senha?
+
+CREATE USER nome_do_usuario IDENTIFIED BY 'senha_do_usuario';
+Substitua "nome_do_usuario" pelo nome que deseja dar ao usuário e "senha_do_usuario" pela senha desejada. Este comando cria um novo usuário no banco de dados com a senha informada.
+
+Exercício 2
+
+Crie o comando correto para dar acesso de consulta em todas as tabelas de todos os bancos ao usuário ‘joao’;
+
+Para dar acesso de consulta em todas as tabelas de todos os bancos ao usuário 'joao', é necessário conceder as permissões adequadas ao usuário. O comando SQL para conceder acesso de consulta (SELECT) em todas as tabelas de todos os bancos é o seguinte:
+
+GRANT SELECT ON *.* TO 'joao'@'%';
+
+Este comando concede ao usuário 'joao' o direito de SELECT (consulta) em todas as tabelas de todos os bancos, para qualquer endereço de IP ('%').
+
+

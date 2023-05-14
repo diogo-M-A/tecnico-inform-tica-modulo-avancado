@@ -1,0 +1,24 @@
+Exercício 1
+Exemplifique a criação e remoção de uma view em um banco de dados qualquer
+
+Suponha que temos uma tabela chamada "clientes" com as seguintes colunas: "id", "nome", "email" e "telefone". Podemos criar uma view que mostre apenas o nome e o email dos clientes:
+CREATE VIEW dados_clientes AS
+SELECT nome, email FROM clientes;
+Neste exemplo, a view é chamada de "dados_clientes". Agora, sempre que precisarmos consultar apenas o nome e o email dos clientes, podemos usar a view ao invés da tabela completa:
+SELECT * FROM dados_clientes;
+Para remover a view, podemos usar o comando DROP VIEW seguido do nome da view que queremos remover:
+DROP VIEW dados_clientes;
+Este comando removerá a view "dados_clientes" do banco de dados.
+
+Exercício 2
+Quais são as restrições para que se possa inserir, atualizar e excluir dados de uma visão?
+
+As restrições para inserção, atualização e exclusão de dados em uma visão (view) dependem de como a visão foi criada. Em geral, as restrições são as seguintes:
+
+    Inserção: é possível inserir dados em uma visão se a visão tiver sido criada a partir de uma única tabela (sem joins) e não tiver colunas calculadas ou expressões. Além disso, a tabela subjacente deve ter uma chave primária definida e não pode ter gatilhos (triggers) que impeçam a inserção de dados.
+
+    Atualização: é possível atualizar dados em uma visão se a visão tiver sido criada a partir de uma única tabela ou a partir de uma junção de tabelas onde cada coluna atualizável na visão corresponda a uma única coluna na tabela subjacente. Além disso, a tabela subjacente deve ter uma chave primária definida e não pode ter gatilhos que impeçam a atualização de dados.
+
+    Exclusão: é possível excluir dados de uma visão se a visão tiver sido criada a partir de uma única tabela ou a partir de uma junção de tabelas onde cada coluna exclusível na visão corresponda a uma única coluna na tabela subjacente. Além disso, a tabela subjacente deve ter uma chave primária definida e não pode ter gatilhos que impeçam a exclusão de dados.
+
+Caso a visão tenha sido criada com alguma restrição adicional, como uma coluna calculada ou uma expressão, a inserção, atualização e exclusão de dados podem ser limitadas ou até mesmo impossibilitadas. Portanto, é importante conhecer bem a estrutura da visão e da tabela subjacente para garantir que as operações de inserção, atualização e exclusão de dados funcionem corretamente.

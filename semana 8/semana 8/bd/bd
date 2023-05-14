@@ -1,0 +1,28 @@
+
+Exercício 1
+Considerando que temos duas tabelas: cliente(id, nome) e vendas(cliente_id, produto_id).
+Utilizando subconsulta, crie uma consulta SQL que retorne todos os clientes que já tiveram
+vendas.
+
+SELECT id, nome
+FROM cliente
+WHERE id IN (SELECT cliente_id FROM vendas);
+
+Explicação: A subconsulta (SELECT cliente_id FROM vendas) retorna todos os cliente_id da tabela vendas. A cláusula WHERE verifica se o id de algum cliente está presente na lista de cliente_id da subconsulta, retornando somente os clientes que já tiveram vendas registradas na tabela vendas.
+
+Exercício 2
+O que a consulta abaixo faz?
+SELECT nome FROM produtos WHERE produto_id IN (SELECT produto_id
+FROM fornecedor_produtos WHERE disponivel = FALSE)
+
+A subconsulta retorna todos os produto_id da tabela fornecedor_produtos que têm o valor FALSE (ou seja, não disponível) na coluna disponivel. A cláusula WHERE verifica se o produto_id de algum produto está presente na lista de produto_id da subconsulta, retornando somente os nomes dos produtos que estão associados a um fornecedor que não tem nenhum produto disponível.
+
+Exercício 3
+Considerando que temos as tabelas: jogador(id integer, nome varchar(100)) e
+jogadas(jogador_id integer, lance varchar(100)). Crie uma consulta que mostre a lista de
+jogadores com quantas jogadas cada um deles já fez. Use subconsulta no select.
+
+SELECT id, nome, (SELECT COUNT(*) FROM jogadas WHERE jogador_id = jogador.id) AS jogadas_feitas
+FROM jogador;
+
+A subconsulta (SELECT COUNT(*) FROM jogadas WHERE jogador_id = jogador.id) é executada para cada registro da tabela jogador e retorna a quantidade de jogadas feitas pelo jogador correspondente ao registro em questão. A cláusula AS é usada para atribuir um nome mais amigável à coluna calculada, que é a contagem de jogadas feitas pelo jogador. O resultado é uma lista com o id, o nome e o número de jogadas_feitas de cada jogador.

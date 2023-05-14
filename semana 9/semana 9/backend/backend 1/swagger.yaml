@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: Exemplo de API de usuários
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      summary: Retorna todos os usuários cadastrados
+      responses:
+        '200':
+          description: Lista de usuários cadastrados
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        email:
+                          type: string
+                          format: email
+                        password:
+                          type: string
+      tags:
+        - Usuários
+    post:
+      summary: Adiciona um novo usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+              required:
+                - name
+                - email
+                - password
+              additionalProperties: false
+      responses:
+        '200':
+          description: Usuário adicionado com sucesso
+        '400':
+          description: Dados inválidos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  msg:
+                    type: string
+                  errors:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        keyword:
+                          type: string
+                        dataPath:
+                          type: string
+                        message:
+                          type: string
+      tags:
+        - Usuários

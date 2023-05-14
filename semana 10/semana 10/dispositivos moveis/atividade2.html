@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <title>atividade 1</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-type="module">
+
+        function Soma(props) {
+            const { a, b, c } = props;
+            const resultado = a + b + c;
+            return <p>A soma entre {a}, {b} e {c} é: {resultado}</p>;
+        }
+
+        function Subtracao(props) {
+            const { a, b } = props;
+            const resultado = a - b;
+            return <p>A subtração de {a} por {b} é: {resultado}</p>;
+        }
+
+        function Multiplicacao(props) {
+            const { a, b, c } = props;
+            const resultado = a * b * c;
+            return <p>A multiplicação entre {a}, {b} e {c} é: {resultado}</p>;
+        }
+
+        function Divisao(props) {
+            const { a, b } = props;
+            const resultado = a / b;
+            return <p>A divisão de {a} por {b} é: {resultado}</p>;
+        }
+
+        function App(props) {
+            const a = prompt("digite a")
+            const b = prompt("digite b")
+            const c = prompt("digite c")
+            return (
+                <div>
+                    <h1>Calculadora</h1>
+                    <Soma a={a} b={b} c={c} />
+                    <Subtracao a={a} b={b} />
+                    <Multiplicacao a={a} b={b} c={c} />
+                    <Divisao a={a} b={b} />
+                    <p>Valores informados: a={a}, b={b}, c={c}</p>
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+    </script>
+
+</body>
+
+</html>

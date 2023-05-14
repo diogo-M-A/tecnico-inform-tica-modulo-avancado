@@ -1,0 +1,20 @@
+Exercício 1 Qual a diferença dos comandos “SHOW DATABASES” e “SHOW TABLES”. Explique se o comando “USE” afeta o resultado dos dois comandos citados anteriormente, se for executado antes deles.
+
+Os comandos SQL "SHOW DATABASES" e "SHOW TABLES" são usados para exibir informações sobre bancos de dados e tabelas, respectivamente.
+
+a diferença entre os comandos "SHOW DATABASES" e "SHOW TABLES" é que o primeiro mostra todos os bancos de dados disponíveis em um servidor de banco de dados, enquanto o segundo mostra as tabelas dentro do banco de dados selecionado. O comando "USE" afeta o resultado de ambos os comandos, pois, se executado antes deles, limitará a exibição aos bancos de dados e tabelas dentro do banco de dados selecionado.
+
+Exercício 2 Explique o que são as três cláusulas principais da expressão de consulta SELECT.
+
+A expressão SELECT é uma cláusula SQL usada para recuperar dados de uma ou mais tabelas de um banco de dados. A expressão SELECT é composta por três cláusulas principais: SELECT, FROM e WHERE. Abaixo, descrevo o que cada uma dessas cláusulas faz:
+
+SELECT: A cláusula SELECT é usada para especificar as colunas que você deseja recuperar da tabela. Você pode listar todas as colunas que deseja selecionar, separando-as por vírgulas, ou usar o caractere "*" para selecionar todas as colunas.
+
+FROM: A cláusula FROM é usada para especificar a tabela ou tabelas a partir das quais você deseja recuperar dados. Você pode especificar uma única tabela ou várias tabelas separadas por vírgulas, se quiser selecionar dados de várias tabelas.
+
+WHERE: A cláusula WHERE é usada para especificar uma condição que deve ser atendida para que as linhas sejam selecionadas. Você pode usar operadores lógicos e relacionais para especificar a condição. Por exemplo, você pode usar a cláusula WHERE para selecionar apenas as linhas em que o valor de uma coluna é maior que um valor específico.
+
+Juntas, essas três cláusulas permitem que você especifique exatamente quais dados deseja recuperar de uma ou mais tabelas em um banco de dados. A cláusula SELECT permite que você especifique as colunas que deseja selecionar, a cláusula FROM permite que você especifique a tabela ou tabelas de onde deseja selecionar os dados e a cláusula WHERE permite que você especifique uma condição que deve ser atendida para que as linhas sejam selecionadas.
+
+ 
+ 
