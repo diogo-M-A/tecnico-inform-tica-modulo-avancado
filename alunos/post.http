@@ -1,0 +1,29 @@
+GET http://localhost:8080/posts
+
+###
+
+GET http://localhost:8080/posts/1
+
+###
+
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+{
+  "titulo": "titulo do post",
+  "texto": "texto do post"
+}
+
+###
+
+PUT http://localhost:8080/posts?id=1
+Content-Type: application/json
+
+{
+  "titulo": "NOVO titulo do post",
+  "texto": "NOVO texto do post"
+}
+
+###
+
+DELETE http://localhost:8080/posts?id=1
